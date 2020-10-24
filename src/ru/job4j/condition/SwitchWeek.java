@@ -27,7 +27,7 @@ public class SwitchWeek {public String nameOfDay(int day) {
         default:
             name = "Неттакогодня";
             break;
-        return name;
-}
 
+}
+    return name;
 }
