@@ -9,13 +9,11 @@ import static org.junit.Assert.assertThat;
 public class FactorialTest {
     @Test
     public void whenCalculateFactorialForFiveThenOneHundreedTwenty() {
-            int n = (5);
-            int expected = 120;
-            assertThat(rsl, Matchers.is(expected));
+        assertThat(Factorial.calc(5), is(120));
     }
 
     @Test
     public void whenCalculateFactorialForZeroThenOne() {
-        /* напишите здесь тест, проверяющий, что факториал для числа 0 равен 1. */
+        assertThat(Factorial.calc(0), is(1));
     }
 }
