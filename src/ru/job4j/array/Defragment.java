@@ -12,10 +12,7 @@ public class Defragment {
                         break;
                     }
                 }
-
                 }
-
-
             System.out.println(array[i] + " ");
         }
         return  array;
