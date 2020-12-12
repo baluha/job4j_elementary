@@ -4,16 +4,14 @@ public class Merge {
 
     public static int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
-        int i = 0, j = 0, k = 0;
-        while (i < left.length && j < right.length) {
-            rsl[k++] = left[i] < right[j] ? left[i++] : right[j++];
+        for (int i = 0; i < left.length; i++) {
+            rsl[i] = left[i];
         }
-        while (i < left.length) {
-            rsl[k++] = left[i++];
+        for (int y = left.length; y < left.length + right.length; y++) {
+            rsl[y] = right[y - left.length];
         }
-        while (j < right.length) {
-            rsl[k++] = right[j++];
-        }
+        SortSelected.sort(rsl);
+
         return rsl;
     }
 }
