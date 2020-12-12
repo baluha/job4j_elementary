@@ -4,9 +4,24 @@ public class Merge {
 
     public static int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
-        System.arraycopy(left, 0, rsl,  0, left.length);
-        System.arraycopy(right, 0, rsl, left.length, right.length);
-        SortSelected.sort(rsl);
+        for (int i = 0, r = 0, l = 0; i < rsl.length; i++) {
+            if (r == right.length) {
+                rsl[i] = left[l];
+                l++;
+                continue;
+            } else if (l == left.length) {
+                rsl[i] = right[r];
+                r++;
+                continue;
+            }
+            if (left[l] <= right[r]) {
+                rsl[i] = left[l];
+                l++;
+            } else {
+                rsl[i] = right[r];
+                r++;
+            }
+        }
         return rsl;
     }
 }
